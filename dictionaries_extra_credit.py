@@ -1,11 +1,11 @@
 keywords = ['Father', 'God', 'Christ', 'Spirit', 'spirit', 'life', 'man']
-worddict = {}
+dict = {}
 
 with open('book of John text.txt', 'r') as f:
     text = f.read().split(' ') 
 
 for word in text:
-    worddict[word] = worddict[word]+1 if word in worddict else 1
+    dict[word] = dict[word]+1 if word in dict else 1
 
 for x in keywords:
-    print(x ,':', worddict[x])
+    print(x ,':', dict[x])
