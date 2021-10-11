@@ -1,20 +1,11 @@
-#get file object reference to the file
-file = open("book of John text.txt", "r")
-#read content of file to string
-data = file.read()
-#get number of occurrences of the substring in the string
-Father = data.count("Father")
-God = data.count("God")
-Christ = data.count("Christ")
-Spirit = data.count("Spirit")
-spirit = data.count("spirit")
-life = data.count("life")
-man = data.count("man")
+keywords = ['Father', 'God', 'Christ', 'Spirit', 'spirit', 'life', 'man']
+worddict = {}
 
-print('Father :', Father)
-print('God :', God)
-print('Christ :', Christ)
-print('Spirit :', Spirit)
-print('spirit :', spirit)
-print('life :', life)
-print('man :', man)
+with open('book of John text.txt', 'r') as f:
+    text = f.read().split(' ') 
+
+for word in text:
+    worddict[word] = worddict[word]+1 if word in worddict else 1
+
+for x in keywords:
+    print(x ,':', worddict[x])
